@@ -19,6 +19,17 @@ public class HabitModel {
     }
 
     public String printHabit(){
+        double originalTime = this.originalTime;
+        double currentTime = this.currentTime;
+        double expectedTime = this.expectedTime;
+        int timeFrame = this.timeFrame;
+        String name = this.name;
+
+        String result = String.format("Your new habit is " + name + "." + " Current time spent per day is: " + currentTime + " hours, Goal time per day is: "
+        + expectedTime + "hours, Time-Frame for this habit is " +timeFrame + " days.");
+
+        return result;
+        
 
     }
 
@@ -27,7 +38,7 @@ public class HabitModel {
 
     public static void main(String[] args) {
         HabitModel myHabit = new HabitModel("Yoga", "14", "5", "5", "30");
-        System.out.println()
+        System.out.println(myHabit.printHabit());
 
     }
 
