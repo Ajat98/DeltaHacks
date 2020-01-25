@@ -29,11 +29,8 @@ public class HabitModel {
         + expectedTime + "hours, Time-Frame for this habit is " +timeFrame + " days.");
 
         return result;
-        
 
     }
-
-
 
 
     public static void main(String[] args) {
