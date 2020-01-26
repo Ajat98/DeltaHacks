@@ -19,63 +19,57 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="371dp"
-        android:layout_marginBottom="268dp"
-        android:text="Your average is: ___ hours"
-        android:textAlignment="center"
-        android:textSize="36sp"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="243dp" />
+
+    <TextView
+        android:id="@+id/average"
+        android:layout_width="401dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="40dp"
+        android:textAlignment="textStart"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/progressQuestion"
-        android:layout_width="334dp"
-        android:layout_height="142dp"
-        android:layout_marginTop="102dp"
-        android:layout_marginBottom="487dp"
+        android:layout_width="359dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="15dp"
         android:text="How many hours did you spend on ____ today?"
         android:textColor="@android:color/black"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.213"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/average"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
 
     <EditText
         android:id="@+id/todayHrs"
-        android:layout_width="204dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="436dp"
+        android:layout_width="213dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
+        android:hint="e.g. 1.5"
         android:inputType="textPersonName"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/progressQuestion" />
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="112dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="242dp"
+        android:layout_width="158dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="30dp"
         android:onClick="currentTimeSubmit"
         android:text="Submit"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/todayHrs"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/progressQuestion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
