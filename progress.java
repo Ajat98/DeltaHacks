@@ -24,6 +24,7 @@ public class progress extends AppCompatActivity {
         myHabit.total += Double.parseDouble(currentTime);
         myHabit.printCurrentTimes();
         myHabit.AverageTime();
+        ((TextView) findViewById(R.id.average)).setText(myHabit.AverageTime());
     }
 
 }
