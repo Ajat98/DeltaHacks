@@ -1,41 +1,59 @@
-package com.example.habit;
+package com.example.deltahack;
+
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HabitModel {
 
     private double originalTime;
-    private double currentTime;
+    protected List<Double> currentTimes = new ArrayList<>();;
     private double expectedTime;
     private int timeFrame;
     private String name;
+    protected double total;
 
-    public HabitModel(String n, String tF, String oT, String cT, String eT) {
+    public HabitModel(String n, String tF, String oT, String eT) {
         this.originalTime = Double.parseDouble(oT);
-        this.currentTime = Double.parseDouble(cT);
         this.expectedTime = Double.parseDouble(eT);
         this.timeFrame = Integer.parseInt(tF);
         this.name = n;
-
-
+        currentTimes.add(this.originalTime);
+        total = originalTime;
     }
 
     public String printHabit(){
         double originalTime = this.originalTime;
-        double currentTime = this.currentTime;
         double expectedTime = this.expectedTime;
         int timeFrame = this.timeFrame;
         String name = this.name;
 
-        String result = String.format("Your new habit is " + name + "." + " Current time spent per day is: " + currentTime + " hours, Goal time per day is: "
+        String result = String.format("Your new habit is " + name + "." + " Current time spent per day is: " + originalTime + " hours, Goal time per day is: "
         + expectedTime + "hours, Time-Frame for this habit is " +timeFrame + " days.");
 
         return result;
 
     }
 
+    public void printCurrentTimes() {
+        for(Double currentTime: currentTimes) {
+            Log.d("d", "printCurrentTimes: " + currentTime);
+        }
+    }
+
+    /** print the average current time the user spending on the target activities from
+     * start to current
+     * @return
+     */
+    public String AverageTime() {
+        if(currentTimes.size() > 3) {
+            return Double.toString(total / currentTimes.size());
+        }
+        return "";
+    }
 
     public static void main(String[] args) {
-        HabitModel myHabit = new HabitModel("Yoga", "14", "5", "5", "30");
-        System.out.println(myHabit.printHabit());
 
     }
 
