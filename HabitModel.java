@@ -1,5 +1,7 @@
 package com.example.deltahack;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class HabitModel {
     private double expectedTime;
     private int timeFrame;
     private String name;
+    protected double total;
 
     public HabitModel(String n, String tF, String oT, String eT) {
         this.originalTime = Double.parseDouble(oT);
@@ -17,6 +20,7 @@ public class HabitModel {
         this.timeFrame = Integer.parseInt(tF);
         this.name = n;
         currentTimes.add(this.originalTime);
+        total = originalTime;
     }
 
     public String printHabit(){
@@ -34,7 +38,7 @@ public class HabitModel {
 
     public void printCurrentTimes() {
         for(Double currentTime: currentTimes) {
-            System.out.println(currentTime + " ");
+            Log.d("d", "printCurrentTimes: " + currentTime);
         }
     }
 
@@ -42,11 +46,13 @@ public class HabitModel {
      * start to current
      * @return
      */
-//    public String printAverage() {
-//        if(currentTimes.size() > 3) {
-//
-//        }
-//    }
+    public String AverageTime() {
+        if(currentTimes.size() > 3) {
+            return Double.toString(total / currentTimes.size());
+        }
+        return "";
+    }
+
     public static void main(String[] args) {
 
     }
