@@ -36,6 +36,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
+        android:onClick="gainHabbit"
         android:text="Make Habit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -45,6 +46,7 @@
         android:layout_width="179dp"
         android:layout_height="64dp"
         android:layout_marginTop="60dp"
+        android:onClick="progress"
         android:text="Progress Tracker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
