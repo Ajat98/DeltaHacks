@@ -1,9 +1,12 @@
 package com.example.deltahack;
 
 import android.util.Log;
+import android.widget.Button;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class HabitModel {
 
@@ -11,7 +14,7 @@ public class HabitModel {
     protected List<Double> currentTimes = new ArrayList<>();;
     private double expectedTime;
     private int timeFrame;
-    protected String name;
+    protected final String name;
     protected double total;
 
     public HabitModel(String n, String tF, String oT, String eT) {
@@ -46,8 +49,10 @@ public class HabitModel {
      * @return
      */
     public String AverageTime() {
-        if(currentTimes.size() >= 3) {
-            return "Your average time per day is: " + Double.toString(total / currentTimes.size()) +" hour(s)";
+        Double average = total / currentTimes.size();
+        if (currentTimes.size() >= 3) {
+            DecimalFormat df = new DecimalFormat(".###");
+            return "Your average time per day is: " + df.format(average) +" hour(s)";
         }
         return "";
     }
@@ -55,8 +60,5 @@ public class HabitModel {
     public static void main(String[] args) {
 
     }
-
-
-
 
 }
